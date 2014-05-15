@@ -38,8 +38,7 @@ var imap = new Imap({
   password: 'mygmailpassword',
   host: 'imap.gmail.com',
   port: 993,
-  tls: true,
-  tlsOptions: { rejectUnauthorized: false }
+  tls: true
 });
 
 function openInbox(cb) {
@@ -665,7 +664,7 @@ Extensions Supported
 
     * The callback passed to append() will receive an additional argument (the UID of the appended message): < _integer_ >appendedUID.
 
-    * The callback passed to append()/seq.append() will receive an additional argument (the UID(s) of the copied message(s) in the destination mailbox): < _mixed_ >newUIDs. `newUIDs` can be an integer if just one message was copied, or a string for multiple messages (e.g. '100:103' or '100,125,130' or '100,200:201').
+    * The callback passed to copy(), move(), seq.copy(), seq.move() will receive an additional argument (the UID(s) of the copied message(s) in the destination mailbox): < _mixed_ >newUIDs. `newUIDs` can be an integer if just one message was copied, or a string for multiple messages (e.g. '100:103' or '100,125,130' or '100,200:201').
 
 * **RFC4551**
 
